@@ -3,5 +3,6 @@ module.exports = {
     '<rootDir>/apps/ng-blog',
     '<rootDir>/apps/api',
     '<rootDir>/libs/data',
+    '<rootDir>/libs/ui',
   ],
 };
