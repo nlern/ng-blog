@@ -8,7 +8,7 @@ import { Todo } from '@myorg/data';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  todos: Array<Todo>;
+  todos: Todo[];
 
   constructor(private http: HttpClient) {}
 
@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   }
 
   fetch() {
-    this.http.get<Array<Todo>>('/api/todos').subscribe((t) => (this.todos = t));
+    this.http.get<Todo[]>('/api/todos').subscribe((t) => (this.todos = t));
   }
 
   addTodo() {
