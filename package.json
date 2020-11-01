@@ -6,7 +6,7 @@
     "ng": "nx",
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
     "nx": "nx",
-    "serve:app": "nx serve",
+    "serve:app": "nx serve ng-blog",
     "serve:api": "nx serve api",
     "start": "ng serve",
     "build": "ng build",
