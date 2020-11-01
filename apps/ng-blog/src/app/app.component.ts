@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 interface Todo {
   title: string;
@@ -12,18 +13,19 @@ interface Todo {
 export class AppComponent implements OnInit {
   todos: Array<Todo>;
 
+  constructor(private http: HttpClient) {}
+
   ngOnInit() {
-    this.todos = new Array<Todo>(
-      {
-        title: 'Todo 1',
-      },
-      {
-        title: 'Todo 2',
-      }
-    );
+    this.fetch();
+  }
+
+  fetch() {
+    this.http.get<Array<Todo>>('/api/todos').subscribe((t) => (this.todos = t));
   }
 
   addTodo() {
-    this.todos = [...this.todos, { title: 'Todo 3' }];
+    this.http.post('/api/todos', {}).subscribe(() => {
+      this.fetch();
+    });
   }
 }
