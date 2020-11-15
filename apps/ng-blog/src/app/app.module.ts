@@ -4,9 +4,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { UiModule } from '@myorg/ui';
 
 import { AppComponent } from './app.component';
+import { AboutComponent } from './containers/about/about.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, AboutComponent],
   imports: [BrowserModule, HttpClientModule, UiModule],
   providers: [],
   bootstrap: [AppComponent],
